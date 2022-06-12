@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+    
+    <div class="line-container scroll svg-scroll" data-rate="-0.6" data-direction="vertical">
+        <svg viewBox="0 0 273 2036" fill="none" preserveAspectRatio="xMidYMax meet">
+            <path d="M126 0.5V288C126.29 294.981 124.334 298.35 117.5 303.5C104.338 319.28 98.4067 329.231 90.4999 349C87.7058 369.676 85.3887 381.639 102.5 392.5C108.042 396.503 110.681 399.486 114 407C122.698 418.68 127.39 420.874 135 407C141.73 395.893 145.742 390.236 154.5 384C172.206 364.685 184.138 355.802 189.5 324.5C191.632 315.912 192.136 310.78 189.5 300C182.317 289.836 176.542 286.236 164 282.5C163.661 282.499 163.328 282.5 163 282.503M163 282.503C155.677 282.567 151.044 283.65 142.5 288L146 263C146.405 261.505 146.967 261.085 148.5 261H163C164.496 260.996 165.257 261.225 165.675 262M163 282.503L166 263C165.921 262.594 165.818 262.265 165.675 262M165.675 262L220 303.5C220.274 304.242 220.178 304.576 219.5 305H196.5L261 366C269.061 376.908 272.085 383.033 271 394C269.055 412.051 264.68 421.389 252.5 437C238.795 451.408 230.263 458.338 209 462.5C192.042 463.995 183.063 460.565 168 446.5L133.5 422.5C131.65 421.07 130.859 420.201 130 418.5C132.441 414.168 134.51 414.567 139 418.5C140.56 420.714 140.369 421.244 136 419.5C133.315 418.318 131.645 418.187 128.5 418.5C126.22 418.567 125.763 419.712 125.5 422.5L126 561C126 561 90.4999 595 126 636.75C161.5 678.5 125.5 713 125.5 713C125.5 713 97.4999 740 126 764C154.5 788 125.5 816 125.5 816C125.5 816 115 840.5 125.75 873.5C136.5 906.5 126 930 126 930C126 930 121.5 961 126 982.5C130.5 1004 126 1035 126 1035C115.985 1043.36 112.289 1047.49 112 1053C110.721 1059.24 112.219 1061.96 121.5 1064.5C150.422 1064.19 165.654 1064.44 182 1069.5C191.679 1071.6 189.807 1072.68 177.5 1074.5C139.168 1078.91 117.502 1078.73 78.4999 1073C60.1386 1066.47 59.5873 1063.17 78.4999 1058C97.1891 1054.67 118.885 1054.94 171 1058C188.384 1060.39 198.309 1061.7 201 1067C204.971 1071.8 204.297 1076.98 201 1088L192.5 1121.5C190.692 1143.38 194.279 1146.61 208 1138C222.418 1123.1 230.188 1114.61 230 1093.5C229.411 1077.81 223.933 1073.96 208 1073C200.327 1072.85 187.126 1094.03 187.5 1104L177.5 1162.5C173.731 1181.41 168.576 1187.97 152.5 1190.5L101 1194.5C86.2429 1195.73 79.94 1192.3 75 1173L60 1113C58.6538 1103.69 57.9255 1098.57 58 1094.5C57.8799 1089.81 57.8543 1087.19 58 1082.5C58.9442 1076.7 61.1025 1077.77 61.5 1082.5V1094.5C61.1892 1099.9 62.1559 1105.12 64 1113L78.4999 1173C83.6014 1189.45 89.325 1191.2 101 1190.5L126 1189V1258.69C126 1258.69 126 1294 126 1328.38C126 1362.75 112 1365 126 1398.06C140 1431.12 126 1467.75 126 1467.75C126 1467.75 112 1509 126 1537.44C140 1565.88 126 1607.12 126 1607.12C126 1607.12 123 1616 126 1624.55C129 1633.09 126 1641.97 126 1641.97C126 1641.97 124 1653.78 126 1659.39C128 1665 126 1676.81 126 1676.81V1746.5H52C38.108 1749.84 33.1462 1754.62 28.5 1767.5V1781.5L20.5 1785.5L1.5 1791V1853L55.5 1869.5L242 1805V1746.5L55.5 1809L28.5 1801V1865L1.5 1874V1934.5L55.5 1952L242 1887.5V1829L55.5 1892L28.5 1883V1949L1.5 1958M1.5 1958V2017.5L55.5 2034L242 1972V1911.5L55.5 1974.5L1.5 1958Z" stroke="#6F4E37" stroke-width="2"/>
+        </svg>     
+    </div>
+
+    <section class="one">
+        <h1 class="scroll" data-rate=".4" data-direction="vertical">brewed coffee</h1>
+    </section>
+
+    <section class="two">
+        <h1 class="scroll" data-rate=".1" data-direction="vertical"></h1>
+        <p></p>
+    </section>
+
+    <script>
+
+        let path = document.querySelector('path');
+        let pathLength = path.getTotalLength();
+
+        path.style.strokeDasharray = pathLength + ' ' + pathLength;
+
+        path.style.strokeDashoffset = pathLength;
+
+        window.addEventListener('scroll', () => {
+
+            var scrollPercentage = (document.documentElement.scrollTop + document.body.scrollTop) / (document.documentElement.scrollHeight - document.documentElement.clientHeight);
+
+            var drawLength = pathLength * scrollPercentage;
+
+            path.style.strokeDashoffset = pathLength - drawLength;
+
+            const target = document.querySelectorAll('.scroll');
+
+            var index = 0, length = target.length;
+            for (index; index < length; index++){
+                var rate = target[index].dataset.rate;
+
+                var offSet = window.pageYOffset;
+
+                if(index == 0){
+                    console.log(offSet)
+                    if(offSet >= 700){
+                        rate = -0.8;
+                    }
+                    if(offSet >= 1500){
+                        rate = -0.5;
+                    }
+                    if(offSet >= 1500){
+                        rate = -0.65;
+                    }
+                    console.log(rate) 
+                }
+
+                var pos = window.pageYOffset * rate;
+
+                if(target[index].dataset.direction == 'vertical'){
+                    target[index].style.transform = 'translate3d(0px, '+pos+'px, 0px)';
+
+                } else {
+                    var posX = window.pageYOffset * target[index].dataset.ratex;
+                    var posY = window.pageYOffset * target[index].dataset.ratey;
+
+                    target[index].style.transform = 'translate3d('+posX+'px, '+posY+'px, 0px)';
+                }
+            }
+
+            
+
+           
+        })
+
+
+    </script>
+
+</body>
+</html>
