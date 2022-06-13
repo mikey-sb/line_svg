@@ -23,6 +23,11 @@
         <h1 class="scroll" data-rate=".1" data-direction="vertical"></h1>
         <p></p>
     </section>
+    <div class="alchemy-text">
+        <h1 class="alchemy-h1" id="alchemy-h1-1">THE</h1>
+        <h1 class="alchemy-h1" id="alchemy-h1-2">ALCHEMY</h1>
+        <h1 class="alchemy-h1" id="alchemy-h1-3">EXPERIMENT</h1>
+    </div>
 
     <script>
 
@@ -36,7 +41,6 @@
         window.addEventListener('scroll', () => {
 
             var scrollPercentage = (document.documentElement.scrollTop + document.body.scrollTop) / (document.documentElement.scrollHeight - document.documentElement.clientHeight);
-
             var drawLength = pathLength * scrollPercentage;
 
             path.style.strokeDashoffset = pathLength - drawLength;
@@ -44,28 +48,70 @@
             const target = document.querySelectorAll('.scroll');
 
             var index = 0, length = target.length;
+            var offSet = window.pageYOffset;
+            var pos = window.pageYOffset * rate;
+
             for (index; index < length; index++){
+
                 var rate = target[index].dataset.rate;
-
                 var offSet = window.pageYOffset;
-
-                if(index == 0){
-                    console.log(offSet)
-                    if(offSet >= 700){
-                        rate = -0.8;
-                    }
-                    if(offSet >= 1500){
-                        rate = -0.5;
-                    }
-                    if(offSet >= 1500){
-                        rate = -0.65;
-                    }
-                    console.log(rate) 
-                }
-
                 var pos = window.pageYOffset * rate;
 
-                if(target[index].dataset.direction == 'vertical'){
+                if (index == 0) {
+
+                    const svgTarget = document.querySelector('.svg-scroll');
+
+                    const lineOne = document.getElementById('alchemy-h1-1');
+                    const lineTwo = document.getElementById('alchemy-h1-2');
+                    const lineThree = document.getElementById('alchemy-h1-3');
+
+                    const activeColor = 'rgba(0, 0, 0, 1)';
+                    const hiddenColor = 'rgba(0, 0, 0, 0)';
+
+                    const breakpoint1 = -2620;
+                    const breakpoint2 = -2900;
+                    const breakpoint3 = -3200;
+                    
+                    var lineTopBump = 0;
+                    var transitionOff = 'none';
+                    var transitionOn = 'top 1s ease';
+
+                    if (pos <= -660 && pos > -2620) {
+                        svgTarget.style.setProperty('--transition', transitionOn);
+                        lineTopBump = -100;
+                    }
+
+                    if (pos <= -2620) {
+                        svgTarget.style.setProperty('--transition', transitionOff);
+                        lineTopBump = -(pos + 2720);
+                    } 
+
+                    // console.log(pos)
+
+                    if (pos > breakpoint1){
+                        lineOne.style.setProperty('color', hiddenColor);  
+                    }
+                    if(pos > breakpoint2){
+                        lineTwo.style.setProperty('color', hiddenColor);
+                    }
+                    if (pos > breakpoint3){
+                        lineThree.style.setProperty('color', hiddenColor);
+                    }
+
+                    if(pos < breakpoint1){
+                        lineOne.style.setProperty('color', activeColor);
+                    }
+                    if(pos < breakpoint2){
+                        lineTwo.style.setProperty('color', activeColor);
+                    }
+                    if(pos < breakpoint3){
+                        lineThree.style.setProperty('color', activeColor);
+                    }
+
+                    svgTarget.style.setProperty('--line-top', lineTopBump + 'px'); 
+                }
+
+                if (target[index].dataset.direction == 'vertical') {
                     target[index].style.transform = 'translate3d(0px, '+pos+'px, 0px)';
 
                 } else {
@@ -75,13 +121,7 @@
                     target[index].style.transform = 'translate3d('+posX+'px, '+posY+'px, 0px)';
                 }
             }
-
-            
-
-           
-        })
-
-
+        });
     </script>
 
 </body>
