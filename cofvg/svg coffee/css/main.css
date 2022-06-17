@@ -1,5 +1,5 @@
 body {
-    height:8000px;
+    height:12500px;
     margin: 0;
 }
 
@@ -8,12 +8,14 @@ body {
     --line-top: 0;
     --transition: top 1s ease;
     top: var(--line-top);
+    /* top: 0px; */
     transition: var(--transition);
-    left: 0;
+    left: 16px;
     width: 100%;
-    height: 3200px;
+    height: 4800px;
     text-align: center;
     overflow: hidden;
+    z-index: 3;
 }
 
 svg {
@@ -84,4 +86,113 @@ p {
 
 .alchemy-text-visible{
 
+}
+
+.img-1{
+    position: absolute;
+    top: 3800px;
+    width: 600px;
+    height: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    left: -600px;
+    right: 0;
+    text-align: center;
+    transition: left 1s ease;
+    z-index: 1;
+}
+.img-cover-1{
+    position: absolute;
+    top: 3800px;
+    width: 600px;
+    height: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    left: -600px;
+    right: 0;
+    text-align: center;
+    background-color: white;
+    z-index: 2;
+}
+
+.img-2{
+    position: absolute;
+    top: 5000px;
+    width: 600px;
+    height: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    left: 600px;
+    right: 0;
+    text-align: center;
+    transition: left 1s ease;
+}
+
+.img-cover-2{
+    position: absolute;
+    top: 5000px;
+    width: 600px;
+    height: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    left: 600px;
+    right: 0;
+    text-align: center;
+    background-color: white;
+    z-index: 2;
+}
+.img-3{
+    position: absolute;
+    top: 7800px;
+    width: 800px;
+    height: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+    text-align: center;
+    transition: top 1s ease;
+    z-index: 1;
+}
+
+.img-cover-3{
+    position: absolute;
+    top: 7800px;
+    width: 800px;
+    height: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+    text-align: center;
+    background-color: white;
+    z-index: 2;
+}
+
+.bg-cover-1{
+    position: absolute;
+    top: 2600px;
+    width: 800px;
+    height: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+    text-align: center;
+    background-color: #EFD9C2;
+    z-index: 2;
+}
+
+.bg-cover-2{
+    position: absolute;
+    top: 6900px;
+    width: 800px;
+    height: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+    text-align: center;
+    background-color: #EFD9C2;
+    z-index: 2;
 }
